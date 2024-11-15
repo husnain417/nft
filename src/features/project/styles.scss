@@ -1,0 +1,63 @@
+@use '../../scss/' as *;
+.tf-project {
+    padding: 0 ;
+    .container-fluid {
+        max-width: 1800px;
+        .swiper {
+            overflow: unset;
+
+            @include tablet {
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.home-1 .tf-project {
+    padding: 0;
+
+    
+}
+.home-2 .tf-project {
+    padding: 92px 0 52px;
+}
+
+.home-3 .tf-project, .community .tf-project {
+    .swiper {
+        overflow: unset;
+
+        @include tablet {
+            overflow: hidden;
+        }
+        .img-box {
+            padding: 20px;
+            img {
+                width: 410px;
+                height: 410px;
+            }
+            // border: 2px solid #2E5819 !important; 
+            // box-shadow: 0 4px 8px rgba(46, 88, 25, 0.3);
+            // transition: border 0.3s ease, box-shadow 0.3s ease;
+
+            // &:hover {
+            //     border: 2px solid #2E5819;
+            //     box-shadow: 0 8px 16px rgba(46, 88, 25, 0.6);  
+            // }
+        }
+    }
+}
+
+.nft-item .tf-button {
+    margin-top: 44px;
+    height: 64px;
+    line-height: 64px;
+    padding: 0 33px;
+}
+
+.nft-details .swiper {
+    width: 1410px;
+
+    @include tablet {
+        overflow: hidden;
+    }
+}
