@@ -20,8 +20,9 @@ function Process(props) {
 
     const [dataBlock] = useState({
         subtitle: 'How It Works',
-        title: 'NFTracker Workflow in Action'
-    })
+        title: 'NFTracker <br> Workflow in Action'
+    });
+    
 
     return (
         <section className="tf-section blog">
@@ -30,7 +31,7 @@ function Process(props) {
                 <div className="col-md-12">
                     <div className="tf-title mb-60">
                         <p className="h8 sub-title" data-aos="zoom-in" data-aos-duration="800">{dataBlock.subtitle}</p>
-                        <h4 className="title" >{dataBlock.title}</h4>
+                        <h4 className="title" dangerouslySetInnerHTML={{ __html: dataBlock.title }}></h4>
                     </div>
                 </div>
                 <div className="col-md-12">

@@ -1,9 +1,9 @@
 @use '../../../scss/' as *;
 
 .tf-button-st2 {
-    background-color: #000056; /* Set background color to #000056 */
-    border: 2px solid #000056;  /* Border matches the background color */
-    color: #fff; /* Text color is white for contrast */
+    background-color: #000056;
+    border: 2px solid #000056;  
+    color: #fff;
     
     &:hover {
         background-color: transparent;  /* Set background to transparent on hover */
@@ -17,6 +17,13 @@
 
     /* Optional padding or other adjustments */
     padding: 12px 24px; /* Example padding for the button */
+}
+
+.row {
+    align-items: center !important;
+    text-align: left !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
 }
 
 .slider {
@@ -127,7 +134,7 @@
             
         }
 
-
+      
         &.two {
             .bg-slider {
                 opacity: 0;
@@ -135,7 +142,33 @@
             .image {
                 display: none;
             }
+
+            .box-slider {
+                &.two {
+                    .content-box {
+                        padding-left: 0;
+                        margin-left: 50px;
+                        text-align: left;
+            
+                        p {
+                            padding-right: 0;
+                        }
+            
+                        .wrap-btn {
+                            justify-content: left;
+                        }
+                    }
+            
+                    // Target small mobile screens
+                    @media (max-width: 480px) {
+                        .content-box {
+                            margin-left: 10px; // Reduce margin-left to 10px
+                        }
+                    }
+                }
+            }
         }
+            
 
         &.three {
             .bg-slider {
@@ -201,5 +234,4 @@
     }
 
 }
-
 

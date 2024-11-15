@@ -162,6 +162,24 @@
         }
     }
 
+    .rm-box {
+        width: 403px; // Default width
+        margin-bottom: 115px;
+
+        @media screen and (max-width: 1025px) {
+            width: 220px !important; // Display 2 boxes per row
+            margin-bottom: 20px; // Reduce margin for better spacing
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 100%; // Display 1 box per row
+            margin-bottom: 20px; // Reduce margin for smaller screens
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        padding: 0 20px;
+    }
+
     @include tablet {
         width: 100%;
 

@@ -20,7 +20,7 @@ function RoadMap(props) {
     const [dataBlock] = useState(
         {
             subtitle: 'ROADMAP',
-            title: 'Nftracker Timeline'
+            title: 'Building NFTracker'
         }
     )
 

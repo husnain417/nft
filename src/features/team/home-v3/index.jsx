@@ -31,7 +31,7 @@ function Team(props) {
     return (
         <section className="tf-section tf-team gallery">
             <div className="container">
-                <div className="row">
+                <div className="row row2">
                     <div className="col-xl-5 col-md-12">
                         <div className="tf-title st2 mb-49" data-aos="fade-up" data-aos-duration="800">
                             <p className="h8 sub sub-title">{dataBlock.subtitle}</p>
