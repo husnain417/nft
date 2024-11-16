@@ -392,11 +392,12 @@
     border-right: 16px solid transparent;
     border-bottom: 16px solid #190d40 !important;
 }
+
 .user-info {
     display: flex;
     align-items: center;
     position: fixed;
-    right: 20px;
+    right: 20px; /* Default right positioning */
     gap: 10px;
 
     .user-avatar {
@@ -415,4 +416,9 @@
     .tf-button {
         display: block; // Keep the logout button visible always
     }
+
+    @media (max-width: 400px) {
+        right: 30px; /* Adjust right positioning for small screens (<400px) */
+    }
 }
+
