@@ -34,9 +34,9 @@ function HomeThree(props) {
                 <About data={dataAbout} />
             </section>
 
-            <section id="roadmap">
+            {/* <section id="roadmap">
                 <RoadMap data={dataRoadmap} />
-            </section>
+            </section> */}
 
             <section id="work">
                 <Work data={dataWork} />

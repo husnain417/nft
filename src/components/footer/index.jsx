@@ -97,7 +97,7 @@ function Footer(props) {
         <img src={img1} alt="" className="bg1" />
         <img src={img2} alt="" className="bg2" />
         <div className="container">
-          <ul className="widget-social">
+          {/* <ul className="widget-social">
             <li>
               <Link to="#">
                 <svg
@@ -194,7 +194,7 @@ function Footer(props) {
                 </svg>
               </Link>
             </li>
-          </ul>
+          </ul> */}
           <h5 className="heading">don’t miss out, join now for early access</h5>
           <p>
             Get exclusive early access to the latest updates and features. Be the first to experience our innovative solutions and stay ahead of the curve. Sign up today to secure your spot!

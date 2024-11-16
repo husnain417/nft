@@ -65,8 +65,8 @@ const menus = [
     },
     {
         id: 3,
-        name: 'Road Map',
-        links: '#roadmap',  // Changed to scroll to 'roadmap' section
+        name: 'Workflow',
+        links: '#process',  // Changed to scroll to 'roadmap' section
         namesub: [
             {
                 id: 1,

@@ -392,3 +392,27 @@
     border-right: 16px solid transparent;
     border-bottom: 16px solid #190d40 !important;
 }
+.user-info {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    gap: 10px;
+
+    .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #fff;
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+            display: none; // Hide the avatar icon on small screens
+        }
+    }
+
+    .tf-button {
+        display: block; // Keep the logout button visible always
+    }
+}

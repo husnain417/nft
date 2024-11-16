@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react'; // Import Auth0 hooks
 import menus from '../../pages/menu';
 
 import './styles.scss';
 import logo from '../../assets/images/logo/logo111.png';
-import logo2 from '../../assets/images/logo/logon.png'; // New logo for scroll state
+import logo2 from '../../assets/images/logo/logon.png'; 
 import Button from '../button';
 
 const Header = () => {
     const [scroll, setScroll] = useState(false);
+    const [menuActive, setMenuActive] = useState(false);
+    const [showLogout, setShowLogout] = useState(false); // To toggle logout button visibility
+
+    // Auth0 Hooks
+    const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
 
     useEffect(() => {
         const handleScroll = () => {
-            setScroll(window.scrollY > 300); // Toggle based on scroll position
+            setScroll(window.scrollY > 300); 
         };
 
         window.addEventListener('scroll', handleScroll);
 
-        // Clean up event listener on component unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []); // Only set up once when the component mounts
-
-    const [menuActive, setMenuActive] = useState(false);
+    }, []); 
 
     const handleMenuActive = () => {
         setMenuActive(!menuActive);
@@ -37,6 +40,10 @@ const Header = () => {
                 behavior: 'smooth',
             });
         }
+    };
+
+    const toggleLogoutButton = () => {
+        setShowLogout(!showLogout);
     };
 
     return (
@@ -58,7 +65,27 @@ const Header = () => {
                             ))}
                         </ul>
                     </nav>
-                    <Button title="join discord" onClick={() => scrollToSection('contact')} />
+
+                    {/* Auth0 Login/Logout Button */}
+                    {isAuthenticated ? (
+                        <div className="user-info">
+                            <img 
+                                src={user.picture} 
+                                alt={user.name} 
+                                className="user-avatar" 
+                                onClick={toggleLogoutButton} // Toggle logout on click
+                            />
+                            {/* Show Logout Button on larger screens or when toggled */}
+                            {(showLogout || window.innerWidth > 768) && (
+                                <Button 
+                                    title="Logout" 
+                                    onClick={() => logout({ returnTo: window.location.origin })} 
+                                />
+                            )}
+                        </div>
+                    ) : (
+                        <Button title="Login" onClick={() => loginWithRedirect()} />
+                    )}
 
                     <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}>
                         <span></span>
