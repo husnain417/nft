@@ -76,7 +76,7 @@ const Header = () => {
                                 onClick={toggleLogoutButton} // Toggle logout on click
                             />
                             {/* Show Logout Button on larger screens or when toggled */}
-                            {(showLogout || window.innerWidth > 768) && (
+                            {(showLogout) && (
                                 <Button 
                                     title="Logout" 
                                     onClick={() => logout({ returnTo: window.location.origin })} 
