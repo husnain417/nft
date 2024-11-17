@@ -421,6 +421,15 @@
         }
     }
 
+    .tf-button {
+        display: block; // Ensure logout button is always visible
+        @media (max-width: 767px) {
+            width: auto;
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+    }
+
     @media (max-width: 400px) {
         right: 30px; /* Adjust right positioning for small screens (<400px) */
     }

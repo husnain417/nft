@@ -66,26 +66,27 @@ const Header = () => {
                         </ul>
                     </nav>
 
-                    {/* Auth0 Login/Logout Button */}
                     {isAuthenticated ? (
                         <div className="user-info">
+                            {/* Show avatar on larger screens */}
                             <img 
                                 src={user.picture} 
                                 alt={user.name} 
                                 className="user-avatar" 
                                 onClick={toggleLogoutButton} // Toggle logout on click
                             />
-                            {/* Show Logout Button on larger screens or when toggled */}
-                            {(showLogout) && (
-                                <Button 
-                                    title="Logout" 
-                                    onClick={() => logout({ returnTo: window.location.origin })} 
-                                />
-                            )}
+                            
+                            {/* Always show logout button, but style it accordingly */}
+                            <Button 
+                                title="Logout" 
+                                onClick={() => logout({ returnTo: window.location.origin })} 
+                                className="tf-button"
+                            />
                         </div>
                     ) : (
                         <Button title="Login" onClick={() => loginWithRedirect()} />
                     )}
+
 
                     <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}>
                         <span></span>
