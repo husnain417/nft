@@ -14,7 +14,9 @@ import NftItemDetails from "./NftItemDetails";
 import Blog from "./Blog";
 import BlogDetails from "./BlogDetails";
 import Contact from "./Contact";
+import Privacy from "./Privacy"
 import TeamDetail from "./TeamDetail";
+import Terms from "./Terms"
 
 
 const routes = [
@@ -35,6 +37,8 @@ const routes = [
   { path: '/blog-details', component: <BlogDetails />},
   { path: '/contact', component: <Contact />},
   { path: '/team-details', component: <TeamDetail />},
+  { path: '/privacy', component: <Privacy />},
+  { path: '/terms', component: <Terms />},
 
 ]
 

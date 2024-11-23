@@ -225,21 +225,21 @@ function Footer(props) {
         <div className="container">
           <div className="wrap-fx">
             <div className="Copyright">
-              <p>CYBOX 2022- ALL rights reserved</p>
+              <p>NFTracker 2024- ALL rights reserved</p>
             </div>
             <ul className="list">
               <li>
-                <Link to="#">Privacy Policy</Link>
+                <Link to="/privacy">Privacy Policy</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="#">Cookies</Link>
-              </li>
+              </li> */}
               <li>
-                <Link to="#">Terms & Conditions</Link>
+                <Link to="/terms">Terms & Conditions</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/contact">Contact Us</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

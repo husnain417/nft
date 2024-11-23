@@ -2,7 +2,7 @@ const menus = [
     {
         id: 1,
         name: 'Home',
-        links: '#',  // Keeping Home link as placeholder
+        links: '/#',  // Keeping Home link as placeholder
         namesub: [
             {
                 id: 1,
@@ -24,7 +24,7 @@ const menus = [
     {
         id: 2,
         name: 'About',
-        links: '#about',  // Changed to scroll to 'about' section
+        links: '/#about',  // Changed to scroll to 'about' section
         namesub: [
             {
                 id: 1,
@@ -66,7 +66,7 @@ const menus = [
     {
         id: 3,
         name: 'Workflow',
-        links: '#process',  // Changed to scroll to 'roadmap' section
+        links: '/#process',  // Changed to scroll to 'roadmap' section
         namesub: [
             {
                 id: 1,
@@ -83,7 +83,7 @@ const menus = [
     {
         id: 4,
         name: 'Nft',
-        links: '#nft',  // Changed to scroll to 'nft' section
+        links: '/#nft',  // Changed to scroll to 'nft' section
         namesub: [
             {
                 id: 1,
@@ -100,7 +100,7 @@ const menus = [
     {
         id: 5,
         name: 'Blog',
-        links: '#blog',  // Changed to scroll to 'blog' section
+        links: '/#blog',  // Changed to scroll to 'blog' section
         namesub: [
             {
                 id: 1,
@@ -117,7 +117,7 @@ const menus = [
     {
         id: 6,
         name: 'Contact',
-        links: '#contact',  // Changed to scroll to 'contact' section
+        links: '/#contact',  // Changed to scroll to 'contact' section
     },
 ];
 

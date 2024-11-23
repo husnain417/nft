@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PageTitle from "../components/pagetitle";
 import * as emailjs from "emailjs-com";
-
 import { contactConfig } from "../assets/fake-data/dataContact";
 import { Helmet } from "react-helmet";
 
@@ -12,44 +11,49 @@ function Contact(props) {
     message: "",
     phone: "",
     alertmessage: "",
+    loading: false,
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormdata({ loading: true });
+    setFormdata({ ...formData, loading: true }); // Keep the previous state and update loading
 
     const templateParams = {
-      from_name: formData.email,
-      user_name: formData.name,
-      to_name: contactConfig.YOUR_EMAIL,
+      from_name: formData.name, // Ensure you're sending the correct value
+      user_name: formData.email,
+      to_name: contactConfig.YOUR_EMAIL, // The recipient email (yours)
       phone: formData.phone,
       message: formData.message,
     };
 
     emailjs
-      .send(
-        contactConfig.YOUR_SERVICE_ID,
-        contactConfig.YOUR_TEMPLATE_ID,
-        templateParams,
-        contactConfig.YOUR_USER_ID
-      )
-      .then(
-        (result) => {
-          setFormdata({
-            loading: false,
-            alertmessage: "SUCCESS! ,Thankyou for your message",
-            variant: "success",
-            show: true,
-          });
-        },
-        (error) => {
-          setFormdata({
-            alertmessage: `Failed to send!`,
-            variant: "danger",
-            show: true,
-          });
-        }
-      );
+    .send(
+      contactConfig.YOUR_SERVICE_ID,
+      contactConfig.YOUR_TEMPLATE_ID,
+      templateParams,
+      contactConfig.YOUR_USER_ID
+    )
+    .then(
+      (result) => {
+        console.log("Email sent successfully:", result);
+        setFormdata({
+          loading: false,
+          alertmessage: "SUCCESS! ,Thank you for your message",
+          variant: "success",
+          show: true,
+        });
+      },
+      (error) => {
+        console.error("Email send failed:", error);
+        setFormdata({
+          loading: false,
+          alertmessage: `Failed to send! ${error.text}`,
+          variant: "danger",
+          show: true,
+        });
+      }
+    );
+  
   };
 
   const handleChange = (e) => {
@@ -79,7 +83,7 @@ function Contact(props) {
                   <h4 className="title">Have a question </h4>
                 </div>
                 <p className="m-r-40">
-                  Fill up the Form and ou team will get back to within 24 hrs
+                  Fill up the Form and our team will get back to within 24 hrs
                 </p>
               </div>
               <form
@@ -155,8 +159,7 @@ function Contact(props) {
                   <div className="mail">
                     <h6>Contact Us</h6>
                     <ul>
-                      <li>+1 666 8888</li>
-                      <li>Info.avitex@gmail.com</li>
+                      <li>info@nftracker.net</li>
                     </ul>
                   </div>
                 </div>
