@@ -45,14 +45,14 @@ function Footer(props) {
         (result) => {
           setFormdata({
             loading: false,
-            alertmessage: "SUCCESS! ,Thankyou for your message",
+            alertmessage: "SUCCESS! ,Thankyou",
             variant: "success",
             show: true,
           });
         },
         (error) => {
           setFormdata({
-            alertmessage: `Failed to send!`,
+            alertmessage: `Failed!`,
             variant: "danger",
             show: true,
           });
